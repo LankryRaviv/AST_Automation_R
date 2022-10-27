@@ -1,0 +1,9 @@
+"save_location": "MAIN"
+"highest_access_role": "SUPERUSER"
+"config":
+  "Radio TX On": 1
+  "Radio Encryption On": 0
+  "Radio TX Modulation": 1
+  "Radio RX Modulation": 1
+  "GS Watchdog Period in s": 3600
+  "Beacon TX On": 1

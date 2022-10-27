@@ -1,0 +1,46 @@
+{
+  "1": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 3, false ]
+  },
+  "2": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 4, false ]
+  },
+  "3": {
+    "Step_Name": "Change power supply output state",
+    "Device": "SerialPowerSupply",
+    "Remote": "ChangeOutputState",
+    "Parameters": [ false ]
+  },
+  "4": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 1, false ]
+  },
+  "5": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 2, false ]
+  },
+  "6": {
+    "Step_Name": "Close connection with serial power supply",
+    "Device": "SerialPowerSupply",
+    "Remote": "CloseConnection",
+    "Parameters": []
+  },
+  "7": {
+    "Step_Name": "Close connection with tcp power supply",
+    "Device": "TcpPowerSupply",
+    "Remote": "Close",
+    "Parameters": []
+  }
+
+}
+

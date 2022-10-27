@@ -1,0 +1,14 @@
+script stat !1
+script stat !2
+script stat !3
+script stat !4
+script stat !5
+script stat !1
+script stat !2
+script stat !3
+script stat !4
+script stat !5
+script stat !1
+script stat !2
+script stat !3
+script stat !4

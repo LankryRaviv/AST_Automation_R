@@ -1,0 +1,56 @@
+{
+    
+    "image":[
+      {
+        "if_run": true,
+        "type": "app",
+        "path": "C:\\Aviadd46\\CPU_ver\\5.15.1\\fcApplication.bin",
+        "version_info": {
+          "APP_MAJOR": 5,
+          "APP_MINOR": 15,
+          "APP_PATCH": 1
+        },
+        "board": "MIC_LSL",
+        "file_id": 12,
+        "from_golden": 0,
+        "broadcast_all": true,
+        "reboot": true,
+        "use_automations": true,
+        "check_version": true
+      },
+      {
+        "if_run": false,
+        "type": "bl1",
+        "path": "PathTobl1",
+        "version_info": {
+          "BOOT_L1_MAJOR": 5,
+          "BOOT_L1_MINOR": 14,
+          "BOOT_L1_PATCH": 1
+        },
+        "board": "MIC_LSL",
+        "file_id": 12,
+        "from_golden": 0,
+        "broadcast_all": false,
+        "reboot": false,
+        "use_automations": false,
+        "check_version": true
+      },
+      {
+        "if_run": false,
+        "type": "bl2",
+        "path": "PathTobl2",
+        "version_info": {
+          "BOOT_L2_MAJOR": 5,
+          "BOOT_L2_MINOR": 14,
+          "BOOT_L2_PATCH": 1
+        },
+        "board": "MIC_LSL",
+        "file_id": 12,
+        "from_golden": 0,
+        "broadcast_all": false,
+        "reboot": false,
+        "use_automations": false,
+        "check_version": true
+      }
+            ]
+}

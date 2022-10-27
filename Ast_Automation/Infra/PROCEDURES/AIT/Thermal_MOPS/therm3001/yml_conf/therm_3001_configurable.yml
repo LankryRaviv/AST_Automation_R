@@ -1,0 +1,10 @@
+---
+ "apc-choice": "APC_1"
+ "bcu-choice":
+   "BCU1": "OFF"
+   "BCU2": "OFF"
+   "BCU3": "OFF"
+   "BCU4": "OFF"
+   "BCU5": "ON"
+   "BCU6": "OFF"
+   "AGGREGATOR": "OFF"

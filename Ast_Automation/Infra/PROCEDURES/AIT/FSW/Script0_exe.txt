@@ -1,0 +1,10 @@
+script stat 1
+script stat 2
+script stat 3
+script stat 4
+script stat 5
+@4611
+script stat 11
+script stat 12
+script stat 13
+script stat 14

@@ -1,0 +1,90 @@
+<Playlist Version="2.0">
+  <Rule Name="Includes" Match="Any">
+    <Rule Match="All">
+      <Property Name="Solution" />
+      <Rule Match="Any">
+        <Rule Match="All">
+          <Property Name="Project" Value="AST_Automation" />
+          <Rule Match="Any">
+            <Rule Match="All">
+              <Property Name="Namespace" Value="AST_Automation.Tests" />
+              <Rule Match="Any">
+                <Rule Match="All">
+                  <Property Name="Class" Value="CPURegTest" />
+                  <Rule Match="Any">
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.ChangeAllPowerModeTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="ChangeAllPowerModeTest" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.CheckIfThereCalibrationSettings" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="CheckIfThereCalibrationSettings" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.ClearFileSystem7And8Test" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="ClearFileSystem7And8Test" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.Debug" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="Debug" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.MakeSureTheCalibrationSettingsAreSavedTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="MakeSureTheCalibrationSettingsAreSavedTest" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.RunCpuUploadTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="RunCpuUploadTest" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.RunFPGAUploadTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="RunFPGAUploadTest" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.UpgardeCPBF" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="UpgardeCPBF" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.UpgradeAPCAndDPC" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="UpgradeAPCAndDPC" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.UploadFDIRTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="UploadFDIRTest" />
+                      </Rule>
+                    </Rule>
+                    <Rule Match="All">
+                      <Property Name="TestWithNormalizedFullyQualifiedName" Value="AST_Automation.Tests.CPURegTest.UploadGoldenFileTest" />
+                      <Rule Match="Any">
+                        <Property Name="DisplayName" Value="UploadGoldenFileTest" />
+                      </Rule>
+                    </Rule>
+                  </Rule>
+                </Rule>
+              </Rule>
+            </Rule>
+          </Rule>
+        </Rule>
+      </Rule>
+    </Rule>
+  </Rule>
+</Playlist>

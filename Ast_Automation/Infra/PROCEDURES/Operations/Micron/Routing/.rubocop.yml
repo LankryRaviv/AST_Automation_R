@@ -1,0 +1,18 @@
+AllCops:
+  NewCops: enable
+
+Metrics/MethodLength:
+  IgnoredMethods: ['puts', 'print', 'end']
+  Max: 40
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Metrics/ClassLength:
+  Max: 200

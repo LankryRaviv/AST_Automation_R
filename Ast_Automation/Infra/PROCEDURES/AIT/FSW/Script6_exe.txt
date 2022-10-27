@@ -1,0 +1,8 @@
+script stat !1
+script stat !2
+$10
+script stat !3
+script stat !1
+$11
+script stat !2
+script stat !3

@@ -1,0 +1,65 @@
+﻿<Window x:Class="GUI.LoginPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Icon="qualitest.ico"
+        Title="Login" MaxWidth="435" MaxHeight="300" 
+        MinWidth="435" MinHeight="300" >
+    <Grid Background="#dcdcdc">
+        <Image 
+                Panel.ZIndex="5"
+                Source="ast_logo.png" HorizontalAlignment="Left" Width="118" Margin="0,0,0,200" />
+        <Label 
+                Panel.ZIndex="4"
+                Padding="80,0,0,0"
+                Content="Automation Test System"
+                Margin="0,0,0,200"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="20" FontWeight="Bold"
+                Background="Black" 
+                FontStretch="UltraCondensed"
+                Foreground="Orange"/>
+        <TextBlock Height="25" HorizontalAlignment="Left" Margin="40,120,0,0" Name="textBlock1" Text="User Name:" VerticalAlignment="Top" Width="67" />
+        <TextBlock Height="25" HorizontalAlignment="Left" Margin="40,168,0,0" Name="textBlock2" Text="Password:" VerticalAlignment="Top" Width="77" />
+        <ComboBox 
+                  materialDesign:TextFieldAssist.UnderlineBrush="Orange"
+                  Height="25" 
+                  HorizontalAlignment="Left" 
+                  Margin="118,115,0,0"
+                  x:Name="comboBoxUsername" 
+                  VerticalAlignment="Top" 
+                  Width="247" >
+        </ComboBox>
+        <PasswordBox
+                  materialDesign:TextFieldAssist.UnderlineBrush="Orange"
+            Height="25" HorizontalAlignment="Left" Margin="118,168,0,0" x:Name="passwordBox"
+                     VerticalAlignment="Top" Width="247" />
+        <Button Content="Login"
+                BorderBrush="#f99f2d"
+                Background="WhiteSmoke"
+                Foreground="Black"
+                Height="26"
+                HorizontalAlignment="Left" 
+                Margin="144,211,0,0" 
+                Name="login_btn" VerticalAlignment="Top" Width="104" Click="Login_btn_Click"/>
+        <Button Content="Cancel"
+                BorderBrush="#f99f2d"
+                Background="WhiteSmoke"
+                Foreground="Black"
+                Height="26" HorizontalAlignment="Right" Margin="0,211,52,0" 
+                Name="cancel_btn" VerticalAlignment="Top" Width="104" Click="Cancel_btn_Click"/>
+        <TextBlock Height="23" HorizontalAlignment="Left" x:Name ="errormessage" VerticalAlignment="Top" Width="247" Margin="118,253,0,0"  OpacityMask="Crimson" Foreground="#FFE5572C"  />
+    </Grid>
+</Window>

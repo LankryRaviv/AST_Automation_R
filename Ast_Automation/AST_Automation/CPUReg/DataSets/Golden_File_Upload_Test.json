@@ -1,0 +1,39 @@
+{
+
+  "golden_file": [
+    {
+      "if_run": true,
+      "type": "app",
+      "path": "C:\\Aviadd46\\CPU_ver\\5.14.101\\fcApplication_5_14_101.bin",
+      "board": "MIC_LSL",
+      "file_id": 14,
+      "file_descriptor_id": 13,
+      "broadcast_all": true,
+      "reboot": true,
+      "use_automations": true
+    },
+    {
+      "if_run": false,
+      "type": "bl1",
+      "path": "PathTobl1",
+      "board": "MIC_LSL",
+      "file_id": 12,
+      "file_descriptor_id": 0,
+      "broadcast_all": false,
+      "reboot": false,
+      "use_automations": false
+    },
+    {
+      "if_run": false,
+      "type": "bl2",
+      "path": "PathTobl2",
+      "board": "MIC_LSL",
+      "file_id": 12,
+      "file_descriptor_id": 0,
+      "broadcast_all": false,
+      "reboot": false,
+      "use_automations": false
+    }
+  ]     
+            
+}

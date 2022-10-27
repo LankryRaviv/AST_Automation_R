@@ -1,0 +1,1 @@
+fr run set_rf_switches_to_off_nominal_predeploy

@@ -1,0 +1,46 @@
+{
+  "GeneralDataPath": "C:\\AST_Automation\\AST_Automation\\CPUReg\\DataSets\\GeneralData.json",
+  "micron_list": "93",
+  "Calibrations": {
+    "RemoteCLI": false,
+    "COMPort": "COM36",
+    "GetSetCommandPath": "\\CPUReg\\DataSets\\",
+    "GetCommandPath": "\\CPUReg\\DataSets\\Micron_param_get.txt",
+    "fwupd_sysinfo_command": "fwupd+sysinfo",
+    "fs_clear_7_command": "fs+clear+7",
+    "fs_clear_8_command": "fs+clear+8",
+    "path_for_remote_cli": "\\PROCEDURES\\Operations\\Micron\\remoteTest.rb",
+    "board": "MIC_LSL",
+    "packet_delay": "1000",
+    "path_for_remote_cli_calibrations": "\\PROCEDURES\\Operations\\Micron\\RemoteCLICallibrations.rb",
+    "PathForCreatedSetValues": "\\CPUReg\\DataSets\\Micron"
+  },
+  "CPU_Upload": {
+    "RubyScriptPath": "\\PROCEDURES\\Operations\\Micron\\run_firmware_upgrade.rb",
+    "PathForData": "\\CPUReg\\DataSets\\CPU_Upload_Test.json"
+  },
+  "Golden_File_Upload": {
+    "RubyScriptPath": "\\PROCEDURES\\Operations\\Micron\\run_golden_image_upgrade.rb",
+    "PathForData": "\\CPUReg\\DataSets\\Golden_File_Upload_Test.json"
+  },
+  "FPGA_Upload": {
+    "RubyScriptPath": "\\PROCEDURES\\Operations\\Micron\\run_fpga_upload.rb",
+    "PathForData": "\\CPUReg\\DataSets\\FPGA_Upload_Test.json"
+
+  },
+  "Power_Modes_Switching": {
+    "RubyScriptPath": "\\PROCEDURES\\Operations\\Micron\\run_power_mode_switching.rb",
+    "Board": "MIC_LSL",
+    "Auto_Reboot": true,
+    "Number_Of_Cycles": 1
+
+  },
+  "Upgrade_CPBF": {
+    "SendPingRubyScript": "\\PROCEDURES\\Operations\\CPBF\\run_cpbf_ping.rb",
+    "RunCPBFRubyScript": "\\PROCEDURES\\Operations\\CPBF\\run_cpbf_upload.rb",
+    "PathForData": "\\CPUReg\\DataSets\\CPBF_Upload.json"
+
+  }
+
+
+}

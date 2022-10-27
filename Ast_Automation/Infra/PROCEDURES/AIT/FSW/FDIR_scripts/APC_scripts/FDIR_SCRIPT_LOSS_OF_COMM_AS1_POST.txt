@@ -1,0 +1,1 @@
+fr run enable_sband_beacon 1

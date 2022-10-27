@@ -1,0 +1,2 @@
+adcs imuswitchsource 1
+adcs resetfilter 2

@@ -1,0 +1,15 @@
+### file list ### 
+
+1. file id 1005 - exit_to_ps2
+2. file id 1006 - reset_to_ps1
+3. file id 1007 - battery_heaters_on
+4. file id 1008 - battery_heaters_off
+5. file id 1009 - charger_on
+6. file id 1010 - charger_off
+7. file id 1011 - mb_heater_on
+8. file id 1012 - mb_heater_off
+9. file id 1013 - fem_heaters_turn_on_all
+10.file id 1014 - fem_heaters_turn_off_all
+11.file id 1015 - fem_heaters_turn_off_all_switch_PS2
+
+** scripts documentation can be found in Micron_FDIR_Strategy_and_SW_Config excel under "Failsafe Actions" sheet **

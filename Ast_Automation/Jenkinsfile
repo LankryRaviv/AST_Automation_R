@@ -1,0 +1,60 @@
+String workspace = 'C:\\JenkinsAgent\\workspace\\Automation'
+String machine_name = System.getenv(MachineName)
+String automation_folder = workspace + '\\AstAutomation'
+String net_folder = 'Z:\\Qualitest'
+String copy_script = net_folder + '\\CI_CD_Scripts\\CopyFolderContent.py'
+
+String build_local_folder = automation_folder + '\\LatestBuild'
+String build_net_folder = net_folder + '\\LatestBuild'
+
+String console_runner_local_folder = automation_folder + '\\ConsoleRunner'
+String console_runner_net_folder = net_folder + '\\NunitConsoleRunner3.15.2'
+String execute_tests_command = console_runner_local_folder + '\\tools\\nunit3-console.exe ' + build_local_folder + '\\AST_Automation.dll --where "cat==%TestCategory%" --timeout=900000'
+
+String report_portal_json = build_local_folder + '\\ReportPortal.config.json'
+String report_portal_configure = net_folder + '\\CI_CD_Scripts\\ConfigureReportPortal.py'
+
+String configuration_net_folder = net_folder + '\\configuration_files'
+String configuration_local_folder = build_local_folder + '\\Jsons'
+
+String report_portal_extension = '..\\..\\LatestBuild\\ReportPortal.NUnitExtension.dll'
+String nunit_extension_file = console_runner_local_folder + '\\tools\\ReportPortal.addins'
+
+
+node(machine_name) {
+    stage("Environment Preparation") {
+        bat 'if exist ' + automation_folder + ' rmdir ' + automation_folder + ' /s /q'
+        bat 'if not exist ' + automation_folder + ' mkdir ' + automation_folder
+
+        withCredentials([string(credentialsId: 'net-drive', variable: 'NetDrivePass')]) {
+            bat 'net use Z: \\\\TLVAWSFGW02\\ast-tlvawsfgw01-smb\\EngTLV ' + NetDrivePass + ' /user:AD\\noam.gruber \nexit 0'
+		}
+
+        bat 'echo Copying automation build files from network folder to "' + build_local_folder + '"'
+        bat 'python "' + copy_script + '" "' + build_net_folder + '" "' + build_local_folder + '" all'
+
+        bat 'echo Copying nunit console runner from network folder to "' + console_runner_local_folder + '"'
+        bat 'python "' + copy_script + '" "' + console_runner_net_folder + '" "' + console_runner_local_folder + '" all'
+    }
+
+    stage("Automation Configuration") {
+        bat 'echo Editing report portal launch details...'
+		bat 'python "' + report_portal_configure + '" "' + report_portal_json + '" "AST Automation Run" "All tests run as part of this launch" %MachineName% %BuildName%'
+
+        bat 'echo Adding report portal listener for nunit...'
+        bat 'echo ' + report_portal_extension + ' > "' + nunit_extension_file + '"'
+
+        bat 'echo Copying the automation configuration json files from "' + configuration_net_folder + '" to "' + configuration_local_folder + '"'
+        bat 'python "' + copy_script + '" "' + configuration_net_folder + '" "' + configuration_local_folder + '" .json'
+    }
+
+    stage("Testing") {
+        try {
+            bat 'echo Executing the tests of this category: %TestCategory%'
+            bat console_runner_local_folder + '\\tools\\nunit3-console.exe ' + build_local_folder + '\\AST_Automation.dll --where "cat==%TestCategory%" --timeout=900000'
+        }
+
+        finally {
+        }
+    }
+}

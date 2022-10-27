@@ -1,0 +1,4 @@
+fr run reset_uhf_switch_predeploy
+fr run reset_sband_switches_predeploy
+fr run reconfigure_uhf_trans
+fr run reconfigure_sband_trans

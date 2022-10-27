@@ -1,0 +1,10 @@
+{
+  "micron_ids": "107",
+  "_comment_micron_ids": "String format, separate micron_ids with comma, no spaces",
+  "max_cycles": 1,
+  "output_path": "_",
+  "_comment_output_path": "output path is added dynamically before running the test",
+  "output_file_name": "result_change_pwr_modes_*TIMESTAMP*.json",
+  "_comment_output_file_name": "replace *TIMESTAMP* with actual timestamp",
+  "ruby_script_path": "\\PROCEDURES\\Operations\\Micron\\run_power_mode_switching_w_pwr_goods.rb"
+}

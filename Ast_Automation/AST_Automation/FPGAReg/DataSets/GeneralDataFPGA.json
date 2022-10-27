@@ -1,0 +1,22 @@
+{
+  "GeneralDataPath": "\\FPGAReg\\DataSets\\GeneralData.json",
+  "micron_list": "104,103",
+  "Lack_APCAndDPC": false,
+  "Turn_On_The_System": {
+    "Turn_On_The_System_Script": "\\PROCEDURES\\Operations\\Micron\\run_turn_on_system.rb",
+    "COMPort": "COM35",
+    "baudrate_command": "baudrate=1"
+  },
+  "Setup_Band": {
+    "DOWNLINK_BANDWIDTH": "10MHZ",
+    "DOWNLINK_FREQUENCY": 763000,
+    "UPLINK_BANDWIDTH": "10MHZ",
+    "UPLINK_FREQUENCY": 793000,
+    "CPBF_CLI_Command": "\\FPGAReg\\DataSets\\CPBF_Remote_CLI_Commands.txt",
+    "rw_flag": "READ",
+    "reg_addr": "0x140644",
+    "reg_data": "0x134",
+    "timeout_ms": 1000
+
+  }
+}

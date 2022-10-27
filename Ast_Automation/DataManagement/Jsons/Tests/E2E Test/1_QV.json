@@ -1,0 +1,119 @@
+{
+  "1": {
+    "Step_Name": "Change Channel Voltage",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelVoltageAndValidate",
+    "Parameters": [ 2, 12 ]
+  },
+
+  "2": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 2, true ]
+  },
+
+  "3": {
+    "Step_Name": "Change Channel Voltage",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelVoltageAndValidate",
+    "Parameters": [ 1, 5 ]
+  },
+  "4": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 1, true ]
+  },
+  "5": {
+    "Step_Name": "Start connection with QV",
+    "Device": "QV",
+    "Remote": "OpenPort",
+    "Parameters": []
+  },
+  "6": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 2, 0.68 ]
+  },
+  "7": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 1, 2.33 ]
+  },
+  "8": {
+    "Step_Name": "Config QV",
+    "Device": "QV",
+    "Remote": "ConfigQV",
+    "Parameters": [ "\\Settings\\QVConfigFile.cfg" ]
+  },
+  "9": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 2, 2.1 ]
+  },
+  "10": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 1, 2.6 ]
+  },
+  "11": {
+    "Step_Name": "Verify QV is locked",
+    "Device": "QV",
+    "Remote": "AllLocked",
+    "Parameters": []
+  },
+  "12": {
+    "Step_Name": "Change Channel Voltage",
+    "Device": "SerialPowerSupply",
+    "Remote": "ChangeChannelVoltageAndValidate",
+    "Parameters": [ 1, 12 ]
+  },
+  "13": {
+    "Step_Name": "Change power supply output state",
+    "Device": "SerialPowerSupply",
+    "Remote": "ChangeOutputState",
+    "Parameters": [ true ]
+  },
+  "14": {
+    "Step_Name": "Change Channel Voltage",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelVoltageAndValidate",
+    "Parameters": [ 4, 10.2 ]
+  },
+  "15": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 4, true ]
+  },
+  "16": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 4, 0.11 ]
+  },
+  "17": {
+    "Step_Name": "Change Channel Voltage",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelVoltageAndValidate",
+    "Parameters": [ 3, 3.3 ]
+  },
+  "18": {
+    "Step_Name": "Change Channel State",
+    "Device": "TcpPowerSupply",
+    "Remote": "ChangeChannelState",
+    "Parameters": [ 3, true ]
+  },
+  "19": {
+    "Step_Name": "Current Validation",
+    "Device": "TcpPowerSupply",
+    "Remote": "CurrentValidation",
+    "Parameters": [ 3, 0.0011 ]
+  }
+}
+

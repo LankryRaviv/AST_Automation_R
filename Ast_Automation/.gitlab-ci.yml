@@ -1,0 +1,39 @@
+variables:
+  MSBUILD: 'C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe'
+  GITRUNNER_FOLDER: 'C:\GitLabRunner'
+  AUTOMATION_FOLDER: 'C:\GitLabRunner\AST_Automation'
+  SLN_FILE: 'C:\GitLabRunner\AST_Automation\AST_Automation.sln'
+  BUILD_FOLDER: 'C:\GitLabRunner\AST_Automation\AST_Automation\bin\x64\Release'
+  AUTOMATION_DLL: 'C:\GitLabRunner\AST_Automation\AST_Automation\bin\x64\Release\AST_Automation.dll'
+  NUNIT_CONSOLE: 'C:\GitLabRunner\AST_Automation\packages\NUnit.ConsoleRunner.3.15.2\tools\nunit3-console.exe'
+  NUNIT_CONSOLE_FOLDER: 'C:\GitLabRunner\AST_Automation\packages\NUnit.ConsoleRunner.3.15.2'
+  COPY_SCRIPT: 'C:\GitLabRunner\AST_Automation\CI_CD_Scripts\CopyFolderContent.py'
+  BUILD_NETWORK_FOLDER: '\\ad.ast-science.com\share\EngTLV\Qualitest\LatestBuild'
+  NUNIT_CONSOLE_NET_FOLDER: '\\ad.ast-science.com\share\EngTLV\Qualitest\NunitConsoleRunner3.15.2'
+  SCRIPTS_FOLDER: 'C:\GitLabRunner\AST_Automation\CI_CD_Scripts'
+  SCRIPTS_NET_FOLDER: '\\ad.ast-science.com\share\EngTLV\Qualitest\CI_CD_Scripts'
+
+stages:
+  - build
+  - test_tools
+
+build_job:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - 'cmd.exe /c "if exist $env:AUTOMATION_FOLDER rmdir $env:AUTOMATION_FOLDER /s /q"'
+    - 'cd "$env:GITRUNNER_FOLDER"'
+    - 'git clone git@gitlab.com:AmirAmitayAst/Ast_Automation.git'
+    - '& "$env:MSBUILD" "$env:SLN_FILE" -t:Rebuild -p:Configuration=Release -p:Platform=x64'
+    - 'python "$env:COPY_SCRIPT" "$env:BUILD_FOLDER" "$env:BUILD_NETWORK_FOLDER" all'
+
+test_tools_job:
+  stage: test_tools
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  script:
+    - 'cd "$env:GITRUNNER_FOLDER"'
+    - '& "$env:NUNIT_CONSOLE" "$env:AUTOMATION_DLL" --explore:TestInfo.xml'
+    - 'python "$env:COPY_SCRIPT" "$env:NUNIT_CONSOLE_FOLDER" "$env:NUNIT_CONSOLE_NET_FOLDER" all'
+    - 'python "$env:COPY_SCRIPT" "$env:SCRIPTS_FOLDER" "$env:SCRIPTS_NET_FOLDER" all'

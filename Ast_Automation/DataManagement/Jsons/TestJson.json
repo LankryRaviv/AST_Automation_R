@@ -1,0 +1,26 @@
+{
+  //"1": {
+  //  "Step_Name": "Config QV",
+  //  "Device": "QV",
+  //  "Remote": "ConfigQV",
+  //  "Parameters": [
+  //    "\\Settings\\QVConfigFile.cfg" //,
+  //    //1,
+  //    //true,
+  //    //[1,2,3]
+  //  ]
+  //},
+  "1": {
+    "Step_Name": "Start connection with QV",
+    "Device": "QV",
+    "Remote": "OpenPort",
+    "Parameters": []
+  }
+  //,
+  //"2": {
+  //	"Step_Name": "Change Power Supply Channel State",
+  //	"Device": "Ps",
+  //	"Remote": "ChangeChannelState",
+  //	"Parameters": [ 1, false ]
+  //}
+}

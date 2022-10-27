@@ -1,0 +1,65 @@
+{
+  "1": {
+    "Step_Name": "CheckIfThereCalibrationSettings",
+    "Device": "CPURegTest",
+    "Remote": "CheckIfThereCalibrationSettings",
+    "Parameters": [1, "a", true]
+  },
+
+  "2": {
+    "Step_Name": "ClearFileSystem7And8Test",
+    "Device": "CPURegTest",
+    "Remote": "ClearFileSystem7And8Test",
+    "Parameters": []
+  },
+
+  "3": {
+    "Step_Name": "RunCpuUploadTest",
+    "Device": "CPURegTest",
+    "Remote": "RunCpuUploadTest",
+    "Parameters": []
+  },
+  "4": {
+    "Step_Name": "UploadGoldenFileTest",
+    "Device": "CPURegTest",
+    "Remote": "UploadGoldenFileTest",
+    "Parameters": []
+  },
+  "5": {
+    "Step_Name": "MakeSureTheCalibrationSettingsAreSavedTest",
+    "Device": "CPURegTest",
+    "Remote": "MakeSureTheCalibrationSettingsAreSavedTest",
+    "Parameters": []
+  },
+  "6": {
+    "Step_Name": "UploadFDIRTest",
+    "Device": "CPURegTest",
+    "Remote": "UploadFDIRTest",
+    "Parameters": [1111, "999aaaa", true]
+  },
+  "7": {
+    "Step_Name": "UpgradeAPCAndDPC",
+    "Device": "CPURegTest",
+    "Remote": "UpgradeAPCAndDPC",
+    "Parameters": []
+  },
+  "8": {
+    "Step_Name": "UpgardeCPBF",
+    "Device": "CPURegTest",
+    "Remote": "UpgardeCPBF",
+    "Parameters": []
+  },
+  "9": {
+    "Step_Name": "RunFPGAUploadTest",
+    "Device": "CPURegTest",
+    "Remote": "RunFPGAUploadTest",
+    "Parameters": []
+  } ,
+  "10": {
+    "Step_Name": "ChangeAllPowerModeTest",
+    "Device": "CPURegTest",
+    "Remote": "ChangeAllPowerModeTest",
+    "Parameters": []
+  } 
+}
+

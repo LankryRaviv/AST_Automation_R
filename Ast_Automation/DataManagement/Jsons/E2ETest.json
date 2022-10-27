@@ -1,0 +1,146 @@
+{
+  "SpectrumAnalyzer": {
+    "IP": "10.60.0.186",
+    "Port": 5025,
+    "CarrierReferenceFrequency": "3000000000",
+    "Direction": "DLIN",
+    "SystemBandwith": 10,
+    "Invert": true
+  },
+
+  "SignalGenerator": {
+    "IP": "10.60.0.155",
+    "UL_Freq": 793000000,
+    "DL_Freq": 763000000,
+    "UL_dB": -30,
+    "DL_dB": -20,
+    "UL_QAM": "UL_16QAM_10MHZ.WFM",
+    "DL_QAM": "LTE_64QAM_10MHZ.WFM"
+  },
+
+  "LocalSignalGenerator": {
+    "IP": "192.168.2.13"
+  },
+
+  "RubyScripts": {
+    "ConfigFpgaFreq": {
+      "Path": "\\PROCEDURES\\Operations\\Micron\\config_fpga_freq.rb",
+      "Parameters": {
+        "MicronList": [ 11 ],
+        "DL_Freq": 763000,
+        "UL_Freq": 796000
+      }
+    }
+  },
+
+  "MainBoard": {
+    //"ComPort": "COM89"
+    "ComPort": "COM6"
+  },
+
+  "CPBF": {
+    "FirstComPort": "COM116",
+    "SecondComPort": "COM114",
+    "Commands": [
+      "send=lutr,512",
+      "bdtable=1",
+      "satable=1",
+      "vgtrxrst=1",
+      "baudrate=2",
+      "vgtbypassaggr=1",
+      "vgt0select=1",
+      "send=bfconfig,0",
+      "beamen=0x1",
+      "opmode=3",
+      "testmode=0",
+      "df=0x040000,0x00000000000000",
+      "timetagtype=0",
+      "adclo=2995,2",
+      "dlspinv=1",
+      "ulspinv=1",
+      "dacscl=4800"
+    ]
+  },
+
+  "QV": {
+    "ComPort": "COM4",
+    "ConfigFilePath": "\\Settings\\QVConfigFile.cfg"
+  },
+
+  "MicronList": "11",
+
+  "PowerSupply": {
+    "IP": "192.168.1.11",
+    "Port": 1026,
+    "ComPort": "COM5",
+    "TcpPsVoltages": [ 5, 12, 3.3, 10.2 ],
+    "SerialVoltages": [ 12 ]
+  },
+
+  "eNB": {
+    "Name": "eNB",
+    "Host": "10.60.0.235",
+    "User": "lablinux01",
+    "Password": "1234qwer",
+    "Commands": [
+      "uhd_find_devices"
+    ]
+  },
+
+  "UE": {
+    "Name": "UE",
+    "Host": "10.60.0.77",
+    "User": "lablinux02",
+    "Password": "1234qwer",
+    "Commands": [
+      "uhd_find_devices"
+    ]
+  },
+
+  "UpConverter": {
+    "IP": "192.168.2.30",
+    "Name": "Up Converter",
+    "Band": "Band3"
+  },
+
+  "DownConverter": {
+    "IP": "192.168.2.20",
+    "Name": "Down Converter",
+    "Band": "Band2"
+  },
+
+  "IsUlTest": false,
+
+  "BPMS": {
+    "IP": "192.168.1.211",
+    "FirstTcpPort": "5001",
+    "SecondTcpPort": "2000",
+    "ComPort": "COM90",
+    "ComPortCommands": [
+      "root",
+      "root",
+      "cd /home/bpms/rfsoc/",
+      "./bpms"
+    ],
+    "FirstTcpPortCommands": [
+      "adclo=763,1",
+      "adclo=763,0",
+      "adclo=793,3",
+      "adclo=793,2"
+    ],
+    "SecondTcpPortCommands": [
+      "init delay ddc2=0",
+      "init delay ddc2=40000000",
+      "init delay ddc4=0",
+      "init delay ddc6=0",
+      "init delay ddc8=0",
+      "reset fpga=monitor info?"
+    ]
+  },
+
+  "DigitalAttenuator": {
+    "ComPort": "COM3",
+    "Values": [ 25, 5 ]
+  }
+
+}

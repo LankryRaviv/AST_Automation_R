@@ -1,0 +1,4 @@
+$20
+fdir disablediag 68
+fdir disablediagfailsafe 68
+fdir cleardiagstatus 68

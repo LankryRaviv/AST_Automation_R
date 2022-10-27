@@ -1,0 +1,33 @@
+{
+
+  "Software": {
+    "entry_size": 1754,
+    "file_id": 4,
+    "upload_filename": "C:\\AST_Automation\\AST_Automation\\bin\\Debug\\PROCEDURES\\Operations\\CPBF\\cpbf_app",
+    "board": "CPBF",
+    "aspect": "CRC",
+    "test_break": 0,
+    "period_between_pkts": 0.05
+  },
+  "RFSoC": {
+    "entry_size": 1754,
+    "file_id": 1,
+    "upload_filename": "C:\\AST_Automation\\AST_Automation\\bin\\Debug\\PROCEDURES\\Operations\\CPBF\\BOOT.zip",
+    "board": "CPBF",
+    "aspect": "CRC",
+    "test_break": 0,
+    "period_between_pkts": 0.05
+  },
+  "VUP": {
+    "entry_size": 1754,
+    "file_id": 5,
+    "upload_filename": "C:\\AST_Automation\\Ast_Automation\\bin\\Debug\\PROCEDURES\\Operations\\CPBF\\vup_fpga.zip",
+    "board": "CPBF",
+    "aspect": "CRC",
+    "test_break": 0,
+    "period_between_pkts": 0.05
+
+  }
+
+
+}

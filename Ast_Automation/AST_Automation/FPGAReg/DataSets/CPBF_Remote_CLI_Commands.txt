@@ -1,0 +1,9 @@
+vgtrxrst=1
+vgtbypassaggr=1
+vgt0select=1
+beamen=0x33333
+opmode=3
+testmode=0
+df=0x040000,0x00000000000000
+timetagtype=0
+send=bfconfig,0

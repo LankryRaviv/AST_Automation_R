@@ -1,0 +1,27 @@
+---
+ "apc-choice": "APC_1"
+ "bcu-choice":
+   "BCU1":
+     "on-threshold": 20
+     "off-threshold": 30
+   "BCU2":
+     "on-threshold": 40
+     "off-threshold": 50
+   "BCU3":
+     "on-threshold": 20
+     "off-threshold": 30
+   "BCU4":
+     "on-threshold": 40
+     "off-threshold": 50
+   "BCU5":
+     "on-threshold": 20
+     "off-threshold": 30
+   "BCU6":
+     "on-threshold": 40
+     "off-threshold": 50
+   "AGGREGATOR":
+     "on-threshold": 40
+     "off-threshold": 50
+  #  "All":
+  #    "on-threshold": 40
+  #    "off-threshold": 50

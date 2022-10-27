@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/reportportal/agent-net-nunit/master/src/ReportPortal.NUnitExtension/ReportPortal.config.schema",
+  "enabled": true,
+  "server": {
+    "url": "http://10.60.0.32:8080/api/v1/",
+    "project": "superadmin_personal",
+    "authentication": {
+      "uuid": "cf3cfc78-4bba-4b27-943f-b0dc500ee944"
+    }
+  },
+  "launch": {
+    "name": "Demo Tests AST",
+    "description": "this is description",
+    "debugMode": false,
+    "attributes": [ "t1", "t2", "platform:x64" ]
+  }
+}

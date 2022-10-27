@@ -1,0 +1,13 @@
+{
+  "link": "MIC_LSL",
+  "image_loc": "C:\\Users\\labuser15\\Documents\\cosmos\\SW_versions\\FPGA\\fpga_00_14_00.img",
+  "version_info": "00.14.00",
+  "file_id": 25,
+  "from_golden": 0,
+  "entry_size": 1754,
+  "broadcast_all": true,
+  "reboot": true,
+  "do_file_check": false,
+  "use_automations": true
+
+}

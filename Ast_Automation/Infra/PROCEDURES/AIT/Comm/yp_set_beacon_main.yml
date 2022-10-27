@@ -1,0 +1,41 @@
+"save_location": "MAIN"
+"highest_access_role": "SUPERUSER"
+"config":
+  "beacon_tm_collection_period_in_ms": 8000
+  "beacon_tx_on": 1
+  "beacon_initial_delay_in_s": 240
+  "beacon_tx_period_in_ms": 8000
+  "beacon_destination_id": 29
+  "beacon_destination_port": 16
+  "telemetry_origin_id_1": 1
+  "origin_port_1": 16
+  "telemetry_request_1": "01 0F"
+  "telemetry_mask_1": "00 76"
+  "telemetry_origin_id_2": 3
+  "origin_port_2": 16
+  "telemetry_request_2": "01 02"
+  "telemetry_mask_2": "00 46"
+  "telemetry_origin_id_3": 0
+  "origin_port_3": 0
+  "telemetry_request_3": "00 00"
+  "telemetry_mask_3": "00 00"
+  "telemetry_origin_id_4": 0
+  "origin_port_4": 0
+  "telemetry_request_4": "00 00"
+  "telemetry_mask_4": "00 00"
+  "telemetry_origin_id_5": 0
+  "origin_port_5": 0
+  "telemetry_request_5": "00 00"
+  "telemetry_mask_5": "00 00"
+  "telemetry_origin_id_6": 0
+  "origin_port_6": 0
+  "telemetry_request_6": "00 00"
+  "telemetry_mask_6": "00 00"
+  "telemetry_origin_id_7": 0 
+  "origin_port_7": 0
+  "telemetry_request_7": "00 00"
+  "telemetry_mask_7": "00 00"
+  "telemetry_origin_id_8": 0
+  "origin_port_8": 0
+  "telemetry_request_8": "00 00"
+  "telemetry_mask_8": "00 00"

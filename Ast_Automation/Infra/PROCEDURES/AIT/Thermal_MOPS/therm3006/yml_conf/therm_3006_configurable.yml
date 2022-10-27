@@ -1,0 +1,15 @@
+---
+ "apc-choice": "APC_1"
+ "heater-choice":
+   "HEATER_SSYPXM": "OFF"
+   "HEATER_CAMYPXM": "ON"
+   "HEATER_SSYPXP": "OFF"
+   "HEATER_CAMYPXP": "ON"
+   "HEATER_SSYMXM_SSYMXP": "OFF"
+   "HEATER_CAMYMXM": "ON"
+   "HEATER_GPSXM_GPSYM": "OFF"
+   "HEATER_CAMYMXP": "OFF"
+
+#  "apc-choice": "APC_1"
+#  "bcu-choice":
+#    "All": "ON"

@@ -1,0 +1,1032 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.13.3\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" />
+  <Import Project="..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.props" Condition="Exists('..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A717FEA9-7236-46FA-B02D-B016D4E797A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Infra</RootNamespace>
+    <AssemblyName>Infra</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\AST_Automation\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\AST_Automation\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\AST_Automation\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ag90x0_LTEFDD_A_17_05">
+      <HintPath>..\External Dlls\Ag90x0_LTEFDD_A_17_05.dll</HintPath>
+    </Reference>
+    <Reference Include="BaseInstrument">
+      <HintPath>..\External Dlls\BaseInstrument.dll</HintPath>
+    </Reference>
+    <Reference Include="ComLib">
+      <HintPath>..\External Dlls\ComLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomDataGrid">
+      <HintPath>..\External Dlls\CustomDataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Dialogs">
+      <HintPath>..\External Dlls\Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="DnsClient, Version=1.6.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.6.1\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="FTD2XX_NET">
+      <HintPath>..\External Dlls\FTD2XX_NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Inifile">
+      <HintPath>..\External Dlls\Inifile.dll</HintPath>
+    </Reference>
+    <Reference Include="InstrumentCommunication">
+      <HintPath>..\External Dlls\InstrumentCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="InstrumentDescriptor">
+      <HintPath>..\External Dlls\InstrumentDescriptor.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mcl_SolidStateSwitch_NET45">
+      <HintPath>..\External Dlls\mcl_SolidStateSwitch_NET45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.18.0\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.18.0\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.18.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.18.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.6.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="NationalInstruments.VisaNS">
+      <HintPath>..\External Dlls\NationalInstruments.VisaNS.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.13.3.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.13.3\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PowerSupply">
+      <HintPath>..\External Dlls\PowerSupply.dll</HintPath>
+    </Reference>
+    <Reference Include="Processes">
+      <HintPath>..\External Dlls\Processes.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.2.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.2\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportPortal.Client, Version=3.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportPortal.Client.3.0.6\lib\net45\ReportPortal.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportPortal.NUnitExtension, Version=4.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportPortal.NUnit.4.3.4\lib\net45\ReportPortal.NUnitExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportPortal.NUnitExtension.LogHandler, Version=4.3.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportPortal.NUnit.4.3.4\lib\net45\ReportPortal.NUnitExtension.LogHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportPortal.Shared, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ReportPortal.Shared.3.2.0\lib\net46\ReportPortal.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="SafeThreadSettings">
+      <HintPath>..\External Dlls\SafeThreadSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappier, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1b25124e6e13a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappier.1.0.0\lib\netstandard2.0\Snappier.dll</HintPath>
+    </Reference>
+    <Reference Include="SnmpSharpNet, Version=0.9.6.0, Culture=neutral, PublicKeyToken=b2181aa3b9571feb, processorArchitecture=MSIL">
+      <HintPath>..\packages\SnmpSharpNet.0.9.6\lib\SnmpSharpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Switches">
+      <HintPath>..\External Dlls\Switches.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VectorNetworkAnalyzers">
+      <HintPath>..\External Dlls\VectorNetworkAnalyzers.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsHardware">
+      <HintPath>..\External Dlls\WindowsHardware.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdSharp, Version=0.6.2.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.6.2\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionsRunner\ActionsRunner.cs" />
+    <Compile Include="BPMS\BPMS.cs" />
+    <Compile Include="Channel Simulator\ChannelSimulator.cs" />
+    <Compile Include="Connections\ConnectionBaseClass.cs" />
+    <Compile Include="Connections\CSPConnection.cs" />
+    <Compile Include="Connections\CspDllConnection.cs" />
+    <Compile Include="Connections\FileStorage.cs" />
+    <Compile Include="Connections\IConnection.cs" />
+    <Compile Include="Connections\KissConnection.cs" />
+    <Compile Include="Connections\KissConverter.cs" />
+    <Compile Include="Connections\ProtoTypes\SimpleTelemetry.cs" />
+    <Compile Include="Connections\SerialConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cosmos\Cosmos.cs" />
+    <Compile Include="Cosmos\CosmosEnumerations.cs" />
+    <Compile Include="Cosmos\CosmosScriptBuilder.cs" />
+    <Compile Include="Cosmos\GenericScript.cs" />
+    <Compile Include="CPBF\CPBF.cs" />
+    <Compile Include="CSPWrapper\CSPWrapper.cs" />
+    <Compile Include="Digital Attenuator\DigitalAttenuator.cs" />
+    <Compile Include="eNB\eNB.cs" />
+    <Compile Include="Enums\CSP_PORT.cs" />
+    <Compile Include="Enums\EnumHelper.cs" />
+    <Compile Include="Enums\ExpectedResponse.cs" />
+    <Compile Include="Enums\MainBoardCommands.cs" />
+    <Compile Include="Enums\ModulationEnum.cs" />
+    <Compile Include="Enums\PowerSupplyChannels.cs" />
+    <Compile Include="IOTools\WriteAndReadToFile.cs" />
+    <Compile Include="LDA\LabBrickWrapper.cs" />
+    <Compile Include="LDA\LDA.cs" />
+    <Compile Include="Logger\Logger.cs" />
+    <Compile Include="Main Board\MainBoard.cs" />
+    <Compile Include="Messages\BaseMessage.cs" />
+    <Compile Include="Messages\Message_CLI.cs" />
+    <Compile Include="PowerSupply\TcpPowerSupply.cs" />
+    <Compile Include="PowerSupply\SerialPowerSupply.cs" />
+    <Compile Include="QV\QV.cs" />
+    <Compile Include="Response\BaseResponse.cs" />
+    <Compile Include="Response\Response_CLI.cs" />
+    <Compile Include="RubyScripts\RubyScriptsKey.cs" />
+    <Compile Include="RubyScripts\RunFPGAFreqConfig.cs" />
+    <Compile Include="RubyScripts\RunGoldenFile.cs" />
+    <Compile Include="RubyScripts\RunRemoteCLICommand.cs" />
+    <Compile Include="RubyScripts\RunRemoteCLICommandCalibrations.cs" />
+    <Compile Include="RubyScripts\RunRubyScript.cs" />
+    <Compile Include="RubyScripts\Run_Change_All_Power_Mode_Script.cs" />
+    <Compile Include="RubyScripts\run_cpu_firmware_upgrade.cs" />
+    <Compile Include="RubyScripts\run_fpga_update.cs" />
+    <Compile Include="Ruby\RubyResponse.cs" />
+    <Compile Include="Ruby\Ruby.cs" />
+    <Compile Include="Ruby\RubyRunner.cs" />
+    <Compile Include="Settings\InstrumentInitialize.cs" />
+    <Compile Include="Settings\XmlSettings.cs" />
+    <Compile Include="Signal Generator\MXG\BaseRFSource.cs" />
+    <Compile Include="Signal Generator\MXG\Keysight_MXG.cs" />
+    <Compile Include="Signal Generator\MXG\Keysight_MXG_IQ.cs" />
+    <Compile Include="Signal Generator\MXG\Keysight_MXG_RFGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signal Generator\RFSource Blocks\BasicIQControl.cs" />
+    <Compile Include="Signal Generator\RFSource Blocks\BasicRFGenerator.cs" />
+    <Compile Include="Signal Generator\SignalGenerator.cs" />
+    <Compile Include="Spectrum Analyzers\Spectrum.cs" />
+    <Compile Include="Ssh Connection\SshConnection.cs" />
+    <Compile Include="Switches\DL_UL_Swtich.cs" />
+    <Compile Include="Switches\SourceSwitch.cs" />
+    <Compile Include="Tcp Connection\TcpConnection.cs" />
+    <Compile Include="UE\UE.cs" />
+    <Compile Include="Up_Down Converter\Converter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
+    <None Include="packages.config" />
+    <None Include="PROCEDURES\AIT\AOCS\general_test.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\script_runner_EMT.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\script_runner_GPS.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\script_runner_IMU.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\script_runner_RWA.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\script_runner_ST.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_EMT_AIT_ACTIVATION.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_EMT_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_FSS_AIT_OUTPUT.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_FSS_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_GPS_AIT_RECEIVING_SIGNALS.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_GPS_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_IMU_AIT_ALIGN_CHECK_DATA.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_IMU_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_MAG_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_RW_AIT_POLARITY.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_RW_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\AOCS\test_ST_AIT_SOH.rb" />
+    <None Include="PROCEDURES\AIT\Camera\test_camera.rb" />
+    <None Include="PROCEDURES\AIT\Camera\test_camera_one_stack.rb" />
+    <None Include="PROCEDURES\AIT\Camera\test_camera_ping.rb" />
+    <None Include="PROCEDURES\AIT\CDH\failover_setup_functions.rb" />
+    <None Include="PROCEDURES\AIT\CDH\fdirConfigs" />
+    <None Include="PROCEDURES\AIT\CDH\test_apc_cross.rb" />
+    <None Include="PROCEDURES\AIT\CDH\test_avionicsG.rb" />
+    <None Include="PROCEDURES\AIT\CDH\test_cdh_example.rb" />
+    <None Include="PROCEDURES\AIT\CDH\test_failover.rb" />
+    <None Include="PROCEDURES\AIT\CDH\test_failover_setup_scripts.rb" />
+    <None Include="PROCEDURES\AIT\Comm\first_contact_fallback.yml" />
+    <None Include="PROCEDURES\AIT\Comm\first_contact_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\inital_config_setup_fallback.yml" />
+    <None Include="PROCEDURES\AIT\Comm\inital_config_setup_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\low_rate_fallback.yml" />
+    <None Include="PROCEDURES\AIT\Comm\low_rate_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\test_comm_example.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_comm_telem.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_qv.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_qv_constant_motion.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_rf_link_throughput.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_sband_cmds.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_sband_set_config.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_sband_wdt_reboot.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_uhf_cmds.rb" />
+    <None Include="PROCEDURES\AIT\Comm\test_uhf_set_config.rb" />
+    <None Include="PROCEDURES\AIT\Comm\turn_off_encryption_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\turn_on_encryption_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\update_modulation_fallback.yml" />
+    <None Include="PROCEDURES\AIT\Comm\update_modulation_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\update_watchdog_timer_fallback.yml" />
+    <None Include="PROCEDURES\AIT\Comm\update_watchdog_timer_main.yml" />
+    <None Include="PROCEDURES\AIT\Comm\yp_set_beacon_main.yml" />
+    <None Include="PROCEDURES\AIT\CPBF\test_CPBF_MICRON_FUPLOAD.rb" />
+    <None Include="PROCEDURES\AIT\CPBF\test_mc_carrier_threshold.rb" />
+    <None Include="PROCEDURES\AIT\FSW\config_binary_all_but_failover_fsa_disabled.bin" />
+    <None Include="PROCEDURES\AIT\FSW\config_binary_all_enabled_in_wakeup_all_fsa_disabled.bin" />
+    <None Include="PROCEDURES\AIT\FSW\config_binary_all_fsa_disabled.bin" />
+    <None Include="PROCEDURES\AIT\FSW\config_binary_flight_candidate_1.bin" />
+    <None Include="PROCEDURES\AIT\FSW\continous_upload_test.rb" />
+    <None Include="PROCEDURES\AIT\FSW\firmware_batch.bat" />
+    <None Include="PROCEDURES\AIT\FSW\HDRM_RF_TEST.rb" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\apcApp_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\apcBL1_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\apcBL2_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\dpcApp_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\dpcBL1_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\dpcBL2_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\fcApp_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\fcBL1_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\fcBL2_Test.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_bins\goldenUpdDescr.37003c3330510131383337.app.656500.bin" />
+    <None Include="PROCEDURES\AIT\FSW\image_valid_check.rb" />
+    <None Include="PROCEDURES\AIT\FSW\IMU_TRIGGER.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\Config_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\CSP_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\FDIR_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\FS_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\FWUPD_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\Medic_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\SE_BasicTest_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\SE_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\Supervisor_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\Sys_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\Timesync_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\individual_tests\TLM_test_individual.rb" />
+    <None Include="PROCEDURES\AIT\FSW\QV_table.bin" />
+    <None Include="PROCEDURES\AIT\FSW\set_realtime_demo.rb" />
+    <None Include="PROCEDURES\AIT\FSW\telem_rate_stability_test.rb" />
+    <None Include="PROCEDURES\AIT\FSW\testImg.bin" />
+    <None Include="PROCEDURES\AIT\FSW\test_AIT_Release.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_configs.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_CSP.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_download_RF.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_emergency_post_sep_stop.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_FDIR.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_FS.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_FS_clearing_files.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_fwupd.rb" />
+    <None Include="PROCEDURES\Operations\FSW\test_fwupd_update.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\AIT\FSW\test_fwupd_update_RF.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_golden_image.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_medic_yp.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_ping_telem_fs.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_post_sep.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_SE.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_SE_GENERAL.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_supervisor.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_SYS.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_timesync.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_timesync_health.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_tlm.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_tlm_stability.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_upload_RF.rb" />
+    <None Include="PROCEDURES\AIT\FSW\test_upload_RF_Continuous.rb" />
+    <None Include="PROCEDURES\AIT\FSW\turning_off_realtime.rb" />
+    <None Include="PROCEDURES\AIT\FSW\turning_on_realtime.rb" />
+    <None Include="PROCEDURES\AIT\FSW\update_fdir_configs_and_failover_script.rb" />
+    <None Include="PROCEDURES\AIT\FSW\upload_download.rb" />
+    <None Include="PROCEDURES\AIT\FSW\upload_fdir_configs_and_flight_scripts.rb" />
+    <None Include="PROCEDURES\AIT\FSW\upload_qv_table.rb" />
+    <None Include="PROCEDURES\AIT\HDRM\test_deployment.rb" />
+    <None Include="PROCEDURES\AIT\HDRM\test_hdrm_example.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_dpc_to_micron_routing.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_micron_example.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_micron_mtq.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_micron_temp_monitor.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_share_pwr_from_micron.rb" />
+    <None Include="PROCEDURES\AIT\Micron\test_share_pwr_to_micron.rb" />
+    <None Include="PROCEDURES\AIT\Power\power_component.rb" />
+    <None Include="PROCEDURES\AIT\Power\test_PCDU_switches.rb" />
+    <None Include="PROCEDURES\AIT\Propulsion\test_PPU_emulator.rb" />
+    <None Include="PROCEDURES\AIT\Propulsion\test_PPU_FM.rb" />
+    <None Include="PROCEDURES\AIT\Propulsion\test_propulsion_example.rb" />
+    <None Include="PROCEDURES\AIT\Thermal\test_heater_checkout.rb" />
+    <None Include="PROCEDURES\AIT\Thermal\test_thermal_checkout.rb" />
+    <None Include="PROCEDURES\AIT\Thermal\test_thermal_example.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3001\proc_therm_3001.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3001\yml_conf\therm_3001_all_off.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3001\yml_conf\therm_3001_all_on.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3001\yml_conf\therm_3001_configurable.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3002\proc_therm_3002.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3002\yml_conf\therm_3002_configurable.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3003\proc_therm_3003.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3003\yml_conf\therm_3003_all_off.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3003\yml_conf\therm_3003_all_on.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3003\yml_conf\therm_3003_configurable.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3006\proc_therm_3006.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3006\yml_conf\therm_3006_all_off.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3006\yml_conf\therm_3006_all_on.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3006\yml_conf\therm_3006_configurable.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3007\proc_therm_3007.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3007\yml_conf\therm_3007_auto.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3007\yml_conf\therm_3007_manual.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3009\proc_therm_3009.rb" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3009\yml_conf\therm_3009_off.yml" />
+    <None Include="PROCEDURES\AIT\Thermal_MOPS\therm3009\yml_conf\therm_3009_on.yml" />
+    <None Include="PROCEDURES\generic_headless_tlm_tests.rb" />
+    <None Include="PROCEDURES\generic_tlm_testsuite.rb" />
+    <None Include="PROCEDURES\headless_example.rb" />
+    <None Include="PROCEDURES\headless_tlm_testsuite.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_EMT.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_FSS.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_GPS.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_IMU.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_MAG.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_RWA.rb" />
+    <None Include="PROCEDURES\Operations\AOCS\AOCS_ST.rb" />
+    <None Include="PROCEDURES\Operations\Camera\Camera_Utils.rb" />
+    <None Include="PROCEDURES\Operations\COMM\COMM_TTC.rb" />
+    <None Include="PROCEDURES\Operations\COMM\power_qva.rb" />
+    <None Include="PROCEDURES\Operations\COMM\SBand_Properties.rb" />
+    <None Include="PROCEDURES\Operations\COMM\UHF_Config_Params.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\BOOT.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\CPBF\cpbf_app">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_FS_Download.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_FS_Upload.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_Logfile_Download.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_MODULE.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_send_cli_list.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\CPBF_Telem.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\run cpbf_logfile_download.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\run cpbf_send_cli_list.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\run_cpbf_upload.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\CPBF\run_cpbf_ping.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\CPBF\test_CPBF_Telem.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\test_CPBF_testrunner_all.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\test_CPBF_testrunner_fwupdate.rb" />
+    <None Include="PROCEDURES\Operations\CPBF\vup_fpga.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Data\pwr_good_indicators_list.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\EPS\cs_ep_17.rb" />
+    <None Include="PROCEDURES\Operations\EPS\EPS_PCDU.rb" />
+    <None Include="PROCEDURES\Operations\EPS\monitor_heater_thresholds.rb" />
+    <None Include="PROCEDURES\Operations\EPS\pcdu_take_control.rb" />
+    <None Include="PROCEDURES\Operations\FPGA SW\009\ast3000_fpga_00.09.00_1\BOOT.bin" />
+    <None Include="PROCEDURES\Operations\FPGA SW\009\ast3000_fpga_00.09.00_1\fpga_900_1.img" />
+    <None Include="PROCEDURES\Operations\FPGA SW\009\ast3000_fpga_00.09.00_1\fsbl.elf" />
+    <None Include="PROCEDURES\Operations\FPGA SW\009\fpga9" />
+    <None Include="PROCEDURES\Operations\FSW\change_csp_id.rb" />
+    <None Include="PROCEDURES\Operations\FSW\create_golden_descriptor.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Camera.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Config.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Config_Properties.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Config_Types.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_CSP.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_DPC.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FDIR.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Firmware_Update.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS_Continue_Upload.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS_Download.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS_Download_Bitfield.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS_File_Check.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FS_Upload.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_FWUPD.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Medic.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_SE.rb" />
+    <None Include="PROCEDURES\Operations\FSW\FSW_Telem.rb" />
+    <None Include="PROCEDURES\Operations\FSW\run FSW_upload_scripts.rb" />
+    <None Include="PROCEDURES\Operations\FSW\test_bitfield_fdwonload.rb" />
+    <None Include="PROCEDURES\Operations\FSW\UTIL_ByteString.rb" />
+    <None Include="PROCEDURES\Operations\FSW\UTIL_CmdSender.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\CHECK_CHARGING_FROM_SP.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\DISABLE_PWR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\DONEE.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\DONOR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\EpsTelemetry.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\CHARGER\VERIFY_BATTERIES_SOC.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\ControlMicron.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_GET_BAT_HEATERS_STATUS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_GET_BAT_HEATER_STATUS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_GET_FEM_HEATERS_STATUS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_GET_FEM_HEATER_STATUS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_GET_MB_HEATERS_STATUS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_get_power_mode.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_PING.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_POWER_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_REBOOT.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_set_power_mode.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_BATTERY.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_FEM_INSIDE_CU.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_FEM_NEAR_PA.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_IMU.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_INSIDE_FPGA.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_INSIDE_MCU.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_MB.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\MIC_TEMPERATURE_SOLAR_PANEL.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\UPLOAD_FPGA.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Automation\FDIR\UPLOAD_SW.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ChangeMode.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ChangeToOperationalMicronsInChain.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ChangeToPS2MicronsInChain.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ChangeToReducedMicronsInChain.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Check battaries.rb" />
+    <None Include="PROCEDURES\Operations\Micron\check_pwr_good_indicators.rb" />
+    <None Include="PROCEDURES\Operations\Micron\check_pwr_good_pwr_mode_switching.rb" />
+    <None Include="PROCEDURES\Operations\Micron\config_fpga_freq.rb" />
+    <None Include="PROCEDURES\Operations\Micron\CW_DL_OTA_RINGS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\CW_DL_RINGS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\cw_test-old.rb" />
+    <None Include="PROCEDURES\Operations\Micron\cw_test.rb" />
+    <None Include="PROCEDURES\Operations\Micron\CW_UL_OTA_RINGS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\default_routing_check.rb" />
+    <None Include="PROCEDURES\Operations\Micron\dpc_to_mic_routing.rb" />
+    <None Include="PROCEDURES\Operations\Micron\DSA_UPLOAD.rb" />
+    <None Include="PROCEDURES\Operations\Micron\e2e_test.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Element.rb" />
+    <None Include="PROCEDURES\Operations\Micron\FDIR_UPLOAD.rb" />
+    <None Include="PROCEDURES\Operations\Micron\FPGA_SW_Upload_Rings.rb" />
+    <None Include="PROCEDURES\Operations\Micron\FPGA_Upload_Rings.rb" />
+    <None Include="PROCEDURES\Operations\Micron\get_micron_version.rb" />
+    <None Include="PROCEDURES\Operations\Micron\get_tlm_slim.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Golden_Image_Upload.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Golden_test.rb" />
+    <None Include="PROCEDURES\Operations\Micron\GPS_RINGS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\GTY_PRBS_MAIN_RING_X.rb" />
+    <None Include="PROCEDURES\Operations\Micron\GTY_PRBS_MODULE.rb" />
+    <None Include="PROCEDURES\Operations\Micron\GTY_PRBS_SECONDARY_RING_X.rb" />
+    <None Include="PROCEDURES\Operations\Micron\HandleRouting.rb" />
+    <None Include="PROCEDURES\Operations\Micron\linkage_to_ps2 Off- FM.rb" />
+    <None Include="PROCEDURES\Operations\Micron\linkage_to_ps2 On- FM.rb" />
+    <None Include="PROCEDURES\Operations\Micron\linkage_to_ps2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\manual_sw_upload.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_BATT_THERMAL.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_beamforming.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_CPBF_FPGA_Update.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\MICRON_Firmware_Update.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_FPGA_THERMAL.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_FPGA_Update.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\Micron_FS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_FS_Download.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_FS_Upload.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_FWUPD.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_golden_image.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\Micron_IMU_MTQ.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_knock_knock.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_MODULE.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\MICRON_POWER_SHARE.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_PRBS Debug.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_PRBS no csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_PRBS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_ROUTING.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_send_cli_list.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MICRON_SoC.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_use_CLI.rb" />
+    <None Include="PROCEDURES\Operations\Micron\micron_version_config.csv" />
+    <None Include="PROCEDURES\Operations\Micron\mode_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\mode_PS2_PSH_A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\moduleA.rb" />
+    <None Include="PROCEDURES\Operations\Micron\move_to_operational_mode.rb" />
+    <None Include="PROCEDURES\Operations\Micron\move_to_ps2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\MTQ_Command_Driver.rb" />
+    <None Include="PROCEDURES\Operations\Micron\off_ring_A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Packet_drop_debug.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Packet_drop_debug_mic.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping ring all.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PingByMicronID.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ping_all.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ping_PWD_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_Rings.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_Rings_No_Routing_No_Safety.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_Rings_No_Safety.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_B.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_C.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_D.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_E.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ping_ring_F.rb" />
+    <None Include="PROCEDURES\Operations\Micron\power_goods_change_power_mode_json_to_csv_converter.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\Power_Modes_Switching.rb" />
+    <None Include="PROCEDURES\Operations\Micron\power_mode_scan.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_Off_Micron_In_Chain.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_Off_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_Off_Ring.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_CW_DL_OTA_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_CW_DL_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_CW_UL_OTA_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_FPGA_SW_Upload_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_FPGA_Upload_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_GPS_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Ping_Chain_and_Target_Power_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Ping_Chain_and_Target_Routing_Power_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Ping_Routing_Safety_Power_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_PS2_With_safety.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Reduced.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Ring_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_Ring_Reduced.rb" />
+    <None Include="PROCEDURES\Operations\Micron\POWER_ON_RING_TO_PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Power_On_SW_Upload_Power_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\prbs_default.rb" />
+    <None Include="PROCEDURES\Operations\Micron\prbs_gty.rb" />
+    <None Include="PROCEDURES\Operations\Micron\prbs_gty_redundancy.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_MAIN_RING_X.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_MAIN_RING_X.rb.rb" />
+    <None Include="PROCEDURES\Operations\Micron\prbs_redundancy.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_A no csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_A_no_csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_B no csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_B.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_B_no_csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_C no csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_C_no_csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_D_no_csv_withBadConnection122_123.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_E_no_csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_RING_F_no_csv.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_SECONDARY_RING_X.rb" />
+    <None Include="PROCEDURES\Operations\Micron\PRBS_single_test_secondary.rb" />
+    <None Include="PROCEDURES\Operations\Micron\pwr_good_indicators_excel_reader.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Read_Power_Goods_W_Power_Modes_Switching.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\RebootMicronsInChain.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rei_test_prbs_with_txt_config.rb" />
+    <None Include="PROCEDURES\Operations\Micron\RemoteCLICallibrations.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_A&amp;B_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_ABCDEF_PRBS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_ABCDE_PRBS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_ABCD_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_ABC_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Rerouting_HSL_ring_A_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-1.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-3.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-4.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-5.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Ring_A_LSL\ring-a-lsl-full.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\.rubocop.yml" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\compass.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\constants.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\control_sat_route.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\csv_analyzer.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\powerup_ym.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\powerup_yp.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\reroute_gfx.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\reroute_hsl_ym_ring_abcd.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\reroute_lsl_ym_ring_a.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\reroute_lsl_yp_ring_a.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\testing.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\testing_pairs.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\example\testing_power.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\micron.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\microns_matrix.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\micron_rapid_power.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\micron_route.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\printing.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_matrix.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_operations.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_operations_delegate.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_operations_delegate_cosmos.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_operations_delegate_cosmos_lsl.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_operations_delegate_graphics.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_options.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\routing_powering.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\utils\csv_analyzer.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\utils\csv_chain_analyzer.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\utils\csv_matrix_analyzer.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\utils\csv_routing_analyzer.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Routing\utils\process_excel.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run beamforming.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run file upload example.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run file upload.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run firmware upgrade.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_FDIR_Upload.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_fpga_upload.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run fpga_upload_hsl.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run golden_image_upgrade.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run micron_file_download.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run mic_cpbf_fpga_update.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run mode PS2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run mtq loop.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run multi mtq loop.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run off ring A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_micron_use_CLI.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_power_mode_switching_w_pwr_goods.rb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_mic_cpbf_fpga_update.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_power_mode_switching_w_pwr_goods.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run PS2 PSH A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run rerouting HSL ring A&amp;B_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run rerouting HSL ring ABCDEF_PRBS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run rerouting HSL ring ABCDE_PRBS.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run rerouting HSL ring ABC_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run rerouting HSL ring A_PRBS_ERR.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run send_cli_list.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run sniffing test ring A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_firmware_upgrade.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_golden_image_upgrade.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_gty_prbs_test.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_power_mode_switching.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\run_Remote_CLI.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_ruby_script_example.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_set_time.rb" />
+    <None Include="PROCEDURES\Operations\Micron\run_turn_on_system.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\SaveMicronStatusMode.rb" />
+    <None Include="PROCEDURES\Operations\Micron\set_power_share_to_micron.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_A_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_A_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_B_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_B_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_C_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_C_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_D_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_D_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_E_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_E_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_F_OFF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_ring_F_Operational.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Set_Ring_Off.rb" />
+    <None Include="PROCEDURES\Operations\Micron\SET_TIME.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Sniffing_Test_ring_A.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Sniffing_Test_ring_A_old.rb" />
+    <None Include="PROCEDURES\Operations\Micron\SW_Upload_Rings.rb" />
+    <None Include="PROCEDURES\Operations\Micron\Test.rb" />
+    <None Include="PROCEDURES\Operations\Micron\TestFunctions.rb" />
+    <None Include="PROCEDURES\Operations\Micron\testing broadcast.rb" />
+    <None Include="PROCEDURES\Operations\Micron\test_check_pwr_good_indicators.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\test_script_runner.rb" />
+    <None Include="PROCEDURES\Operations\Micron\ThermalTelemetry.rb" />
+    <None Include="PROCEDURES\Operations\Micron\TrajectoryControlFunctions.rb" />
+    <None Include="PROCEDURES\Operations\Micron\turn_on_off_CPBF.rb" />
+    <None Include="PROCEDURES\Operations\Micron\UPLOAD_FPGA.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Micron\UPLOAD_SW_APP.rb" />
+    <None Include="PROCEDURES\Operations\Micron\UPLOAD_SW_BL1.rb" />
+    <None Include="PROCEDURES\Operations\Micron\UPLOAD_SW_BL2.rb" />
+    <None Include="PROCEDURES\Operations\Micron\verify_bat_temperature.rb" />
+    <None Include="PROCEDURES\Operations\Micron\verify_fpga_temperature.rb" />
+    <None Include="PROCEDURES\Operations\Micron\verify_fpga_version.rb" />
+    <None Include="PROCEDURES\Operations\Micron\verify_soc.rb" />
+    <None Include="PROCEDURES\Operations\Micron\verify_sw_version.rb" />
+    <None Include="PROCEDURES\Operations\Propulsion\PROP_PPU_CONOPS.rb" />
+    <None Include="PROCEDURES\Operations\Routing\Chains.csv" />
+    <None Include="PROCEDURES\Operations\Routing\debug_routing_table.csv" />
+    <None Include="PROCEDURES\Operations\Routing\HSLDefaultRouting.csv" />
+    <None Include="PROCEDURES\Operations\Routing\HSLSecondaryRouting.csv" />
+    <None Include="PROCEDURES\Operations\Routing\LSLDefaultRouting.csv" />
+    <None Include="PROCEDURES\Operations\Routing\LSLSecondaryRouting.csv" />
+    <None Include="PROCEDURES\Operations\Routing\Map.csv" />
+    <None Include="PROCEDURES\Operations\Routing\Matrix.csv" />
+    <None Include="PROCEDURES\Operations\Routing\MatrixHSL.csv" />
+    <None Include="PROCEDURES\Operations\Routing\MatrixLSL.csv" />
+    <None Include="PROCEDURES\Operations\Routing\Micron_ID_PORT_Routing_Table.csv" />
+    <None Include="PROCEDURES\Operations\Routing\operational_routing_table.csv" />
+    <None Include="PROCEDURES\Operations\Routing\operational_routing_table_prbs.csv" />
+    <None Include="PROCEDURES\Operations\Routing\PRBS Operational table.csv" />
+    <None Include="PROCEDURES\Operations\Routing\PRBS_PCS_CONNECTION_TABLE_BY_RING.csv" />
+    <None Include="PROCEDURES\Operations\Routing\Rings.csv" />
+    <None Include="PROCEDURES\Operations\Routing\sat_routing.csv" />
+    <None Include="PROCEDURES\Operations\THERMAL\set_heater_config.rb" />
+    <None Include="PROCEDURES\Operations\THERMAL\THERM_Telem.rb" />
+    <None Include="PROCEDURES\Operations\Tools\module_clogger.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\Operations\Tools\module_file_tools.rb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="PROCEDURES\README.md" />
+    <None Include="PROCEDURES\TestRunnerUtils\ast_test_base.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\cmd_input.csv" />
+    <None Include="PROCEDURES\TestRunnerUtils\CSV_Reader.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\test.csv" />
+    <None Include="PROCEDURES\TestRunnerUtils\test.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\test_runner_main.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\test_suite_tools.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_AOCS.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Camera.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_CDH.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Comm.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_CPBF.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_FSW.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_HDRM.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Micron.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Power.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Propulsion.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Thermal.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\TestSuites\tlm_testsuite_Thermal_MOPS.rb" />
+    <None Include="PROCEDURES\TestRunnerUtils\test_case_utils.rb" />
+    <None Include="Settings\QVConfigFile.cfg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Signal Generator\MXG\Manuals\E8251-90355.pdf" />
+    <None Include="Signal Generator\MXG\Manuals\Manual_N5180-90004%28SCPI_command%29.pdf" />
+    <None Include="Signal Generator\MXG\Manuals\MXG Specifications.pdf" />
+    <None Include="Signal Generator\MXG\Manuals\N5180-90004.pdf" />
+    <None Include="Signal Generator\MXG\Manuals\N5180-90069.pdf" />
+    <None Include="Signal Generator\MXG\Manuals\N5180-90074.pdf" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Channel Simulator\ChannelSimulator.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mongocrypt.dll" />
+    <Content Include="PROCEDURES\AIT\CDH\medic_failover_secondary_board_script.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\fdir_demo_script.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS1_POST.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS2_POST.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS2_PRIOR.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS2_PRIOR_ONCE.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS3.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_LOSS_OF_COMM_AS6.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\APC_scripts\FDIR_SCRIPT_RED_STACK_FAILOVER.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\FC_scripts\FDIR_SCRIPT_RED_AOCS_EXCL_IMU_PRIM.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\FC_scripts\FDIR_SCRIPT_RED_AOCS_RESET_FILTER_STIMUKF0.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\FDIR_scripts\FC_scripts\FDIR_SCRIPT_RED_AOCS_RESET_FILTER_STIMUKF1.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\red_stack_failover_script.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script0_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script10_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script11_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script1_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script2_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script3_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script4_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script5_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script6_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script7_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script8_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\Script9_exe.txt" />
+    <Content Include="PROCEDURES\AIT\FSW\this_sec_apc_take_over_script.txt" />
+    <Content Include="PROCEDURES\OperationsFDIRScripts\battery_heaters_off.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\battery_heaters_on.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\charger_off.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\charger_on.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\exit_to_ps2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\fdir_scripts_file_ids.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\fem_heaters_turn_off_all.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\fem_heaters_turn_off_all_switch_PS2.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\fem_heaters_turn_on_all.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\mb_heaters_off.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\mb_heaters_on.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\OperationsFDIRScripts\reset_to_ps1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PROCEDURES\Operations\TestEquipment\CPBF_POWER_SHARING_OFF.py" />
+    <Content Include="PROCEDURES\Operations\TestEquipment\CPBF_POWER_SHARING_ON.py" />
+    <None Include="LDA\VNX_atten64.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)\External Dlls\VNX_atten64.dll" "$(TargetDir)"
+xcopy "$(SolutionDir)\packages\NUnit.ConsoleRunner.3.15.2\tools\*.*" "$(TargetDir)\" /Y /I /E
+xcopy "$(SolutionDir)\Infra\PROCEDURES\"."" "$(TargetDir)\PROCEDURES\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\ReportPortal.Client.3.0.6\build\net45\ReportPortal.Client.targets" Condition="Exists('..\packages\ReportPortal.Client.3.0.6\build\net45\ReportPortal.Client.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ReportPortal.Client.3.0.6\build\net45\ReportPortal.Client.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ReportPortal.Client.3.0.6\build\net45\ReportPortal.Client.targets'))" />
+    <Error Condition="!Exists('..\packages\ReportPortal.Shared.3.2.0\build\net46\ReportPortal.Shared.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ReportPortal.Shared.3.2.0\build\net46\ReportPortal.Shared.targets'))" />
+    <Error Condition="!Exists('..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.targets'))" />
+    <Error Condition="!Exists('..\packages\NUnit.3.13.3\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.3\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets'))" />
+  </Target>
+  <Import Project="..\packages\ReportPortal.Shared.3.2.0\build\net46\ReportPortal.Shared.targets" Condition="Exists('..\packages\ReportPortal.Shared.3.2.0\build\net46\ReportPortal.Shared.targets')" />
+  <Import Project="..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.targets" Condition="Exists('..\packages\ReportPortal.NUnit.4.3.4\build\net45\ReportPortal.NUnit.targets')" />
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.6.0\build\MongoDB.Libmongocrypt.targets')" />
+</Project>

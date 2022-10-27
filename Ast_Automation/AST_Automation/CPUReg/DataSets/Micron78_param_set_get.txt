@@ -1,0 +1,8 @@
+
+
+csp micronidset 78
+csp micronidget
+
+
+micron_sys_param set_micron_board_info_param micron_ser_num MCF088
+micron_sys_param get_micron_board_info_param micron_ser_num

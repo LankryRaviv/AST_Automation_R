@@ -1,0 +1,57 @@
+"save_location": "MAIN"
+"highest_access_role": "MANUFACTURER"
+"config":
+  "Radio TX On": 0
+  "Radio Encryption On": 0
+  # "Radio Encryption Key": "01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 22 22 13 14 15 16 17 18 19 1F 1B 1C 1D 1E 1F 20"
+  # "Radio Encryption IV": "01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 11"
+  "Radio Power Amplifier Delay": 40
+  "Radio Chip Oscillator Frequency": 40000000
+  "Radio RX Frequency": 437500000
+  "Radio TX Frequency": 437500000
+  "Radio Power": 1
+  "Radio Protocol Version": 1
+  "Radio TX Modulation": 1
+  "Radio RX Modulation": 1
+  "GS Watchdog Period in s": 3600
+  "General TM Collection Period in ms": 1000
+  "Beacon TM Collection Period in ms": 8000
+  "Beacon TX On": 0
+  "Beacon Initial Delay in s": 0
+  "Beacon TX Period in ms": 8000
+  "Beacon Destination ID": 29
+  "Beacon Destination Port": 7
+  # "Telemetry Origin ID 1": 
+  # "Telemetry Origin Port 1":
+  # "Telemetry Request 1":
+  # "Telemetry Mask 1":
+  # "Telemetry Origin ID 2":
+  # "Telemetry Origin Port 2":
+  # "Telemetry Request 2":
+  # "Telemetry Mask 2":
+  # "Telemetry Origin ID 3":
+  # "Telemetry Origin Port 3":
+  # "Telemetry Request 3":
+  # "Telemetry Mask 3":
+  # "Telemetry Origin ID 4":
+  # "Telemetry Origin Port 4":
+  # "Telemetry Request 4":
+  # "Telemetry Mask 4":
+  # "Telemetry Origin ID 5":
+  # "Telemetry Origin Port 5":
+  # "Telemetry Request 5":
+  # "Telemetry Mask 5":
+  # "Telemetry Origin ID 6":
+  # "Telemetry Origin Port 6":
+  # "Telemetry Request 6":
+  # "Telemetry Mask 6":
+  # "Telemetry Origin ID 7":
+  # "Telemetry Origin Port 7":
+  # "Telemetry Request 7":
+  # "Telemetry Mask 7":
+  # "Telemetry Origin ID 8":
+  # "Telemetry Origin Port 8":
+  # "Telemetry Request 8":
+  # "Telemetry Mask 8":
+  "RTC Clock Source LSE": 1
+  "Log Severity": 4
